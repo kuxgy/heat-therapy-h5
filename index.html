@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>新根源中西医结合诊所 · 热疗项目介绍</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23C8692E'/><text x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-family='serif'>热</text></svg>">
+<style>
+/* ===== 全局重置 ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: #FAF6F0;
+  color: #333;
+  line-height: 1.7;
+  overflow-x: hidden;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ===== 配色变量 ===== */
+:root {
+  --primary: #C8692E;
+  --primary-light: #E8A06A;
+  --primary-dark: #9A4E1C;
+  --secondary: #2D6A5F;
+  --secondary-light: #5A9A8E;
+  --bg: #FAF6F0;
+  --bg-warm: #F5EDE0;
+  --card: #FFFFFF;
+  --text: #333333;
+  --text-light: #777777;
+  --border: #E8DDD0;
+}
+
+/* ===== Hero 区域 ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(160deg, #9A4E1C 0%, #C8692E 40%, #E8A06A 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 30px;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(255,220,180,0.3) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -20%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(255,200,150,0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-badge {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  padding: 6px 20px;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 20px;
+  color: rgba(255,255,255,0.9);
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+.hero-title {
+  position: relative;
+  z-index: 2;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+.hero-subtitle {
+  position: relative;
+  z-index: 2;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 18px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 40px;
+  letter-spacing: 4px;
+}
+.hero-divider {
+  position: relative;
+  z-index: 2;
+  width: 60px;
+  height: 2px;
+  background: rgba(255,255,255,0.5);
+  margin: 0 auto 30px;
+}
+.hero-desc {
+  position: relative;
+  z-index: 2;
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  max-width: 320px;
+  line-height: 1.9;
+}
+.hero-scroll {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  letter-spacing: 2px;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ===== 通用区块 ===== */
+.section {
+  padding: 50px 24px;
+}
+.section-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  text-align: center;
+  margin-bottom: 8px;
+}
+.section-subtitle {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-light);
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+.section-divider {
+  width: 40px;
+  height: 3px;
+  background: var(--primary);
+  margin: 0 auto 30px;
+  border-radius: 2px;
+}
+
+/* ===== 导语区域 ===== */
+.intro {
+  background: var(--card);
+  position: relative;
+}
+.intro-text {
+  font-size: 14px;
+  color: #555;
+  line-height: 2;
+  text-align: justify;
+  margin-bottom: 16px;
+}
+.intro-text:last-child { margin-bottom: 0; }
+.intro-highlight {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* ===== 项目总览 ===== */
+.overview {
+  background: var(--bg-warm);
+}
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.overview-card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 16px 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.overview-card:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 15px rgba(200,105,46,0.15);
+}
+.overview-card-icon {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.overview-card-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.overview-card-tag {
+  font-size: 11px;
+  color: var(--text-light);
+}
+
+/* ===== 项目详情 ===== */
+.project-detail {
+  background: var(--card);
+  border-radius: 16px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+}
+.project-header {
+  padding: 24px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s;
+}
+.project-header:active { background: var(--bg-warm); }
+.project-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.project-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.project-title-wrap { flex: 1; }
+.project-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.project-slogan {
+  font-size: 12px;
+  color: var(--primary);
+}
+.project-arrow {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.project-detail.open .project-arrow {
+  transform: rotate(180deg);
+}
+.project-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.project-detail.open .project-body {
+  max-height: 3000px;
+}
+.project-content {
+  padding: 0 20px 24px;
+  border-top: 1px solid var(--border);
+}
+.project-block {
+  margin-top: 18px;
+}
+.project-block-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.project-block-title::before {
+  content: '';
+  width: 3px;
+  height: 14px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+.project-block p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.9;
+  text-align: justify;
+}
+.project-feature-list {
+  list-style: none;
+  padding: 0;
+}
+.project-feature-list li {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.8;
+  padding: 4px 0 4px 16px;
+  position: relative;
+}
+.project-feature-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-light);
+}
+.project-feature-list li strong {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+.project-benefit-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+.benefit-tag {
+  padding: 4px 12px;
+  background: var(--bg-warm);
+  border-radius: 12px;
+  font-size: 12px;
+  color: var(--primary-dark);
+  border: 1px solid var(--border);
+}
+
+/* ===== 温馨提示 ===== */
+.tips {
+  background: linear-gradient(160deg, #2D6A5F 0%, #3D8A7E 100%);
+  color: #fff;
+}
+.tips .section-title { color: #fff; }
+.tips .section-subtitle { color: rgba(255,255,255,0.7); }
+.tips .section-divider { background: rgba(255,255,255,0.5); }
+.tips-list {
+  list-style: none;
+  padding: 0;
+}
+.tips-list li {
+  font-size: 14px;
+  line-height: 1.9;
+  padding: 10px 0 10px 28px;
+  position: relative;
+  color: rgba(255,255,255,0.9);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.tips-list li:last-child { border-bottom: none; }
+.tips-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 16px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 50%;
+}
+.tips-list li::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 20px;
+  width: 6px;
+  height: 4px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+}
+
+/* ===== 底部 ===== */
+.footer {
+  background: #1A1A1A;
+  padding: 40px 24px 30px;
+  text-align: center;
+}
+.footer-name {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+.footer-address {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.footer-disclaimer {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.7;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ===== 回到顶部 ===== */
+.back-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(200,105,46,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 100;
+  border: none;
+}
+.back-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+.back-top:active { transform: scale(0.9); }
+
+/* ===== 动画 ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Hero 区域 ===== -->
+<section class="hero" id="top">
+  <div class="hero-badge">昆明新根源中西医结合诊所</div>
+  <h1 class="hero-title">温养身心<br>由内而外</h1>
+  <div class="hero-divider"></div>
+  <p class="hero-subtitle">热 疗 项 目 介 绍</p>
+  <p class="hero-desc">
+    采用环形脉冲电磁能量场内透热技术<br>
+    从全身到局部，从脊柱到足底<br>
+    多层次温养体验，守护您的健康
+  </p>
+  <div class="hero-scroll">向下滑动 ↓</div>
+</section>
+
+<!-- ===== 导语 ===== -->
+<section class="section intro" id="intro">
+  <h2 class="section-title">项目导语</h2>
+  <div class="section-divider"></div>
+  <p class="intro-text">
+    现代生活节奏加快，久坐少动、饮食不节、熬夜疲劳等习惯，让许多人面临<span class="intro-highlight">手脚发凉、肩背酸痛、腰腿不适、睡眠质量下降</span>等亚健康困扰。
+  </p>
+  <p class="intro-text">
+    中医认为"血得温则行，得寒则凝"，温热之力有助于疏通经络、促进气血运行。昆明新根源中西医结合诊所引进系列热疗设备，为您提供从全身到局部、从脊柱到足底的多层次温养体验。
+  </p>
+</section>
+
+<!-- ===== 项目总览 ===== -->
+<section class="section overview" id="overview">
+  <h2 class="section-title">六大热疗项目</h2>
+  <p class="section-subtitle">覆盖全身 · 背部 · 足部 · 脊柱 · 盆腔</p>
+  <div class="section-divider"></div>
+  <div class="overview-grid" id="overviewGrid">
+    <!-- 由JS动态生成 -->
+  </div>
+</section>
+
+<!-- ===== 项目详情 ===== -->
+<section class="section" id="projects" style="padding-top: 30px;">
+  <div id="projectList">
+    <!-- 由JS动态生成 -->
+  </div>
+</section>
+
+<!-- ===== 温馨提示 ===== -->
+<section class="section tips" id="tips">
+  <h2 class="section-title">温馨提示</h2>
+  <p class="section-subtitle">温 馨 提 示 · 请 您 留 意</p>
+  <div class="section-divider"></div>
+  <ul class="tips-list">
+    <li>以上热疗项目属于养生保健类物理温热体验，不能替代药物治疗或医疗诊断。如有疾病，请遵医嘱进行规范治疗。</li>
+    <li>体验前请告知工作人员自身健康状况，包括是否装有心脏起搏器等电子植入物、是否有出血倾向、是否处于妊娠期、是否有皮肤破损或感觉障碍等。</li>
+    <li>体验过程中如感到不适，请立即告知工作人员停止操作。</li>
+    <li>体验后建议适当补充温水，注意保暖，避免立即吹风或接触冷水。</li>
+    <li>具体项目选择、使用频次和时长，请在诊所专业人员指导下根据个人体质情况安排。</li>
+    <li>本文内容仅供项目介绍参考，不构成医疗建议或治疗承诺。</li>
+  </ul>
+</section>
+
+<!-- ===== 底部 ===== -->
+<footer class="footer">
+  <div class="footer-name">昆明新根源中西医结合诊所</div>
+  <p class="footer-address">
+    云南省昆明市<br>
+    热疗项目 · 养生保健 · 中西医结合
+  </p>
+  <p class="footer-disclaimer">
+    本页面内容仅供项目介绍参考，不构成医疗建议或治疗承诺。<br>
+    如有健康问题，请及时就医并遵医嘱。
+  </p>
+</footer>
+
+<!-- 回到顶部按钮 -->
+<button class="back-top" id="backTop" aria-label="回到顶部">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+
+<script>
+// ===== 项目数据 =====
+const projects = [
+  {
+    num: '一',
+    name: '全身热疗',
+    fullName: '全身热疗（九利能量空间）',
+    slogan: '重塑体质，增强代谢活力',
+    icon: '全身',
+    iconBg: 'linear-gradient(135deg, #C8692E, #E8A06A)',
+    target: '手脚冰凉、容易疲倦乏力者；体态偏沉、代谢偏慢者；面色偏暗、容易瘀青者；情绪容易低落、压力较大者；睡眠质量欠佳者；希望进行全身放松调理者。',
+    tech: '采用环形脉冲电磁能量场内透热技术，通过谐振腔设计将能量均匀作用于机体。组织中的电解质离子和带电微粒在能量场中做共振摩擦，在深层组织内产生温和热能（热效应），有助于促进血液循环和组织放松。同时，细胞和分子在能量场作用下产生微小振动（非热效应），有助于增加细胞活力、促进细胞内营养物质与代谢废物的交换。',
+    features: [
+      { label: '技术成熟', desc: '军工医疗技术转化，环形能量场360°作用于人体' },
+      { label: '体验舒适', desc: '不闷不疼不难受，体验过程舒适放松' },
+      { label: '作用均匀', desc: '从头到脚细胞共振，能量分布均匀' },
+      { label: '使用方便', desc: '操作简单，无需预热等待，躺下即可体验' },
+      { label: '安全可靠', desc: '国际防烫伤专利保护，电子温控技术' },
+      { label: '渗透深入', desc: '热力可深达肌肉、骨骼、脏腑层面，不止于表面' }
+    ],
+    benefits: ['精力充沛', '气色改善', '免疫调节', '身形紧致', '睡眠香甜', '代谢旺盛', '骨骼强健', '身心轻松'],
+    advice: '具体使用频次和时长由诊所工作人员根据个人体质情况指导安排。一般建议初期规律体验，后续根据身体感受调整为每周数次的维护期使用。'
+  },
+  {
+    num: '二',
+    name: '能量空间C系',
+    fullName: '能量空间C系（背部热疗）',
+    slogan: '养生先养背，背通人轻松',
+    icon: '背部',
+    iconBg: 'linear-gradient(135deg, #2D6A5F, #5A9A8E)',
+    target: '肩背酸痛、腰肌劳损者；容易落枕、颈部不适者；胸闷腹胀、背部易生痤疮者；后颈部有富贵包倾向者；长期伏案、久坐办公者；希望进行背部放松养护者。',
+    tech: '能量空间C系采用先进的环形脉冲电磁能量场内透热技术，通过独特的环形电场设计产生温和而有效的热能，能量能够深入人体腰背部组织内部，精准作用于肌肉、血管等部位，从内部逐渐渗透，促进腰背部血液循环的顺畅运行。与传统热疗方式相比，该技术具有更高的针对性与穿透性，能够在不损伤体表皮肤的前提下，深度缓解腰背部的酸痛感。',
+    features: [
+      { label: '内透热技术', desc: '环形能量场内透热技术，能量360°作用于人体' },
+      { label: '渗透深入', desc: '热力直达肌肉、骨骼层面，不止于表面' },
+      { label: '智能控温', desc: '电子温控技术，操作简单，随时调节能量大小' },
+      { label: '安全防护', desc: '国际防烫伤专利保护，远离烫伤风险' },
+      { label: '即开即用', desc: '无需预热等待，坐下即可体验' },
+      { label: '舒适设计', desc: '人体工学座椅设计，体验舒适' }
+    ],
+    benefits: ['改善肩颈', '祛湿排毒', '消除疲惫', '改善睡眠', '调和脏腑', '增强免疫', '放松身心'],
+    advice: '具体使用频次由诊所工作人员指导安排。一般建议初期每天体验一次以帮助身体适应，后续调整为每周3-4次维护；有特定背部健康需求者可在指导下增加使用频次。'
+  },
+  {
+    num: '三',
+    name: 'V型能量养生舱',
+    fullName: 'V型能量空间养生舱（无水足浴桶）',
+    slogan: '长寿秘诀，始于足下',
+    icon: '足部',
+    iconBg: 'linear-gradient(135deg, #8B5E3C, #C49A6C)',
+    target: '腿部水肿、下肢乏力者；手脚发凉、怕冷者；皮肤干燥、后跟开裂者；膝盖疼痛、关节不适者；腿部有静脉曲张倾向者；长期站立或行走者；希望进行足部温养、改善睡眠者。',
+    tech: '采用环形能量场内透热技术，深层透热，有助于打通足部及下肢微循环。无需加水、无需脱鞋，直接使用即可感受温热。45cm加高深桶设计，给小腿乃至全身带来深深的暖意。',
+    features: [
+      { label: '深层透热', desc: '环形能量场内透热技术，深层透热，打通微循环' },
+      { label: '智能控温', desc: '电子温控技术，远离烫伤风险' },
+      { label: '安全无水', desc: '无需担心水溢出导致意外滑倒，使用更安心' },
+      { label: '清洁方便', desc: '无需加水倒水，使用后清洁简单' },
+      { label: '卫生健康', desc: '无需脱鞋直接使用，避免脚气交叉传染，全家放心用' },
+      { label: '深桶设计', desc: '45cm加高深桶，温暖从小腿延伸至全身' }
+    ],
+    benefits: ['通经活血', '舒缓疲劳', '祛湿散寒', '双腿轻盈', '改善睡眠', '关节灵活'],
+    advice: '具体使用频次由诊所工作人员指导安排。一般建议初期每天1次，连续1-2周帮助身体适应；调理期每周3-4次；有睡眠或疲劳困扰者可在指导下增加使用，睡前使用体验更佳。'
+  },
+  {
+    num: '四',
+    name: '律动机器人',
+    fullName: '律动机器人',
+    slogan: '解压脊柱，轻松入眠',
+    icon: '脊柱',
+    iconBg: 'linear-gradient(135deg, #5B4B8A, #8B7BB8)',
+    target: '颈椎痛、腰椎痛、肩背痛者；驼背、脊柱侧弯倾向者；疲劳感增加、睡眠质量差者；久坐人群（上班族、学生、司机）；高强度运动爱好者；体力劳动者；长期站立人群；有不良生活习惯者；中老年人、孕妇、肥胖人群。',
+    tech: '律动机器人融合五行音乐、顶升牵引、石墨烯热疗、PGZ律动按摩、扭腰正骨等八项综合功能技术，对人体的脊柱、颈、肩、腰、腿、足等全身多部位进行综合作用，有助于温煦经络气血、活血化瘀止痛、放松脊柱压力、改善神经和助眠。设备按照脊柱养护逻辑设计六个步骤：激活脊柱 → 温补脊柱 → 疏通脊柱 → 放松脊柱 → 调理脊柱 → 稳固脊柱，循序渐进地呵护脊柱健康。',
+    features: [
+      { label: '颈部顶升牵引', desc: '帮助恢复颈椎的正常曲度，预防长期颈椎不适' },
+      { label: '脊柱生命光波辅热', desc: '从颈部到整个脊柱到脚底的石墨烯热疗' },
+      { label: '半莲花扭转', desc: '模拟瑜伽半莲花扭转动作，增加椎间盘之间的活动度' },
+      { label: '足部按摩', desc: '对足部进行有节奏的挤压和放松，促进足部血液循环' },
+      { label: '肩背部挤压放松', desc: '提供深层次的肌肉放松，辅助减轻背部和肩部的疼痛' },
+      { label: '五行音乐', desc: '促进身心健康达到由内而外的身心平衡' },
+      { label: '腰背部循环顶升牵引', desc: '帮助恢复脊柱的自然曲度' },
+      { label: 'PGZ全身细胞律动按摩', desc: '放松全身，促进深度睡眠' }
+    ],
+    benefits: ['颈椎舒缓', '腰椎放松', '肩背舒适', '脊柱调理', '改善睡眠', '缓解疲劳'],
+    advice: '具体使用频次和时长由诊所工作人员指导安排。一般建议初期每天1次，每次15-30分钟，连续1-2周帮助身体适应；调理期每周3-4次；有严重脊柱问题或睡眠障碍者可在指导下增加使用，睡前使用效果更佳，每次30分钟。'
+  },
+  {
+    num: '五',
+    name: '护臀凳',
+    fullName: '护臀凳',
+    slogan: '中下焦区域温养专家',
+    icon: '盆腔',
+    iconBg: 'linear-gradient(135deg, #A0522D, #D2956A)',
+    target: '腰膝酸软者；尿频尿急、夜尿偏多者；前列腺不适者；盆底松弛者；宫寒畏冷、手脚冰凉者；妇科区域不适者；痔疮困扰者；长期久坐导致臀部不适者。',
+    tech: '深度内透热能有效扩张血管，促进中下焦区域的血液流通，驱散体内寒湿，减少因寒湿引发的不适，如腹部胀痛、消化不良、腰腹疲劳等。同时，深度内透热有助于提高气血运行，加速新陈代谢，帮助身体更有效地排除代谢废物和毒素，改善中下焦的营养供应。',
+    features: [
+      { label: '深层渗透', desc: '能量直达身体内部，改善微循环障碍' },
+      { label: '智能控温', desc: '电子温控技术，远离烫伤风险' },
+      { label: '绿色无烟', desc: '绿色无烟无火源，使用更安心' },
+      { label: '全家适用', desc: '不拘性别，全家都能放心使用' },
+      { label: '操作简便', desc: '无需复杂操作，坐下即可养生' },
+      { label: '舒适选配', desc: '可选配贵妃椅/大极靠，美观更舒适' }
+    ],
+    benefits: ['温暖盆腔', '驱散寒湿', '促进循环', '缓解腰酸', '深层放松', '改善代谢'],
+    advice: '具体使用频次由诊所工作人员指导安排。一般建议初期每天1次帮助身体适应；调理期每周3-4次，持续促进臀部血液流通、减轻肌肉疲劳；有特定健康需求者可在指导下增加使用，睡前使用效果更佳。长期坚持有助于深层放松、促进代谢、缓解久坐引起的臀部不适。'
+  },
+  {
+    num: '六',
+    name: '掼蛋凳',
+    fullName: '掼蛋凳',
+    slogan: '放松养生，健康娱乐',
+    icon: '娱乐',
+    iconBg: 'linear-gradient(135deg, #B8860B, #DAA520)',
+    target: '腰膝酸软者；尿频尿急、夜尿偏多者；前列腺不适者；盆底松弛者；宫寒畏冷者；妇科区域不适者；痔疮困扰者；喜爱棋牌娱乐、希望在休闲同时进行养生者。',
+    tech: '与护臀凳采用相同的深度内透热技术，有效扩张血管，促进中下焦区域的血液流通，驱散体内寒湿，减少因寒湿引发的不适。同时有助于提高气血运行，加速新陈代谢，帮助身体排除代谢废物和毒素。',
+    features: [
+      { label: '深层渗透', desc: '能量直达身体内部，改善微循环障碍' },
+      { label: '智能控温', desc: '电子温控技术，远离烫伤风险' },
+      { label: '绿色无烟', desc: '绿色无烟无火源，使用更安心' },
+      { label: '全家适用', desc: '不拘性别，全家都能放心使用' },
+      { label: '操作简便', desc: '无需复杂操作，坐下即可养生' },
+      { label: '娱乐养生', desc: '棋牌配套设计，健康娱乐两不误' }
+    ],
+    benefits: ['温暖盆腔', '驱散寒湿', '促进循环', '缓解腰酸', '棋牌娱乐', '养生休闲'],
+    advice: '具体使用频次由诊所工作人员指导安排。一般建议初期每天1次帮助身体适应；调理期每周3-4次；有特定健康需求者可在指导下增加使用，睡前使用效果更佳。长期坚持有助于深层放松、促进代谢、缓解久坐引起的臀部不适。'
+  }
+];
+
+// ===== 渲染项目总览 =====
+const overviewGrid = document.getElementById('overviewGrid');
+projects.forEach((p, i) => {
+  const card = document.createElement('div');
+  card.className = 'overview-card fade-in';
+  card.innerHTML = `
+    <div class="overview-card-icon" style="background:${p.iconBg};color:#fff;">
+      <span style="font-size:14px;font-weight:600;">${p.icon}</span>
+    </div>
+    <div class="overview-card-name">${p.name}</div>
+    <div class="overview-card-tag">${p.slogan}</div>
+  `;
+  card.addEventListener('click', () => {
+    const target = document.getElementById('project-' + i);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => {
+        if (!target.classList.contains('open')) {
+          target.querySelector('.project-header').click();
+        }
+      }, 500);
+    }
+  });
+  overviewGrid.appendChild(card);
+});
+
+// ===== 渲染项目详情 =====
+const projectList = document.getElementById('projectList');
+projects.forEach((p, i) => {
+  const detail = document.createElement('div');
+  detail.className = 'project-detail fade-in';
+  detail.id = 'project-' + i;
+
+  const featuresHtml = p.features.map(f =>
+    `<li><strong>${f.label}：</strong>${f.desc}</li>`
+  ).join('');
+
+  const benefitsHtml = p.benefits.map(b =>
+    `<span class="benefit-tag">${b}</span>`
+  ).join('');
+
+  detail.innerHTML = `
+    <div class="project-header">
+      <div class="project-header-left">
+        <div class="project-num">${p.num}</div>
+        <div class="project-title-wrap">
+          <div class="project-title">${p.fullName}</div>
+          <div class="project-slogan">${p.slogan}</div>
+        </div>
+      </div>
+      <svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 9l6 6 6-6"/>
+      </svg>
+    </div>
+    <div class="project-body">
+      <div class="project-content">
+        <div class="project-block">
+          <div class="project-block-title">适合人群</div>
+          <p>${p.target}</p>
+        </div>
+        <div class="project-block">
+          <div class="project-block-title">核心技术</div>
+          <p>${p.tech}</p>
+        </div>
+        <div class="project-block">
+          <div class="project-block-title">功能特点</div>
+          <ul class="project-feature-list">${featuresHtml}</ul>
+        </div>
+        <div class="project-block">
+          <div class="project-block-title">持续体验的益处</div>
+          <div class="project-benefit-tags">${benefitsHtml}</div>
+        </div>
+        <div class="project-block">
+          <div class="project-block-title">使用建议</div>
+          <p>${p.advice}</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // 点击展开/收起
+  const header = detail.querySelector('.project-header');
+  header.addEventListener('click', () => {
+    detail.classList.toggle('open');
+  });
+
+  projectList.appendChild(detail);
+});
+
+// 默认展开第一个项目
+document.getElementById('project-0').classList.add('open');
+
+// ===== 滚动动画 =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ===== 回到顶部 =====
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 500) {
+    backTop.classList.add('show');
+  } else {
+    backTop.classList.remove('show');
+  }
+});
+backTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+</body>
+</html>
