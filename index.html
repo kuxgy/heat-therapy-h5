@@ -294,6 +294,23 @@ body {
   padding: 0 20px 24px;
   border-top: 1px solid var(--border);
 }
+.project-image {
+  width: 100%;
+  border-radius: 12px;
+  margin: 18px 0 6px;
+  background: var(--bg-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 12px;
+}
+.project-image img {
+  max-width: 100%;
+  max-height: 220px;
+  display: block;
+  object-fit: contain;
+}
 .project-block {
   margin-top: 18px;
 }
@@ -558,6 +575,7 @@ const projects = [
     slogan: '重塑体质，增强代谢活力',
     icon: '全身',
     iconBg: 'linear-gradient(135deg, #C8692E, #E8A06A)',
+    image: 'assets/全身热疗.png',
     target: '手脚冰凉、容易疲倦乏力者；体态偏沉、代谢偏慢者；面色偏暗、容易瘀青者；情绪容易低落、压力较大者；睡眠质量欠佳者；希望进行全身放松调理者。',
     tech: '采用环形脉冲电磁能量场内透热技术，通过谐振腔设计将能量均匀作用于机体。组织中的电解质离子和带电微粒在能量场中做共振摩擦，在深层组织内产生温和热能（热效应），有助于促进血液循环和组织放松。同时，细胞和分子在能量场作用下产生微小振动（非热效应），有助于增加细胞活力、促进细胞内营养物质与代谢废物的交换。',
     features: [
@@ -578,6 +596,7 @@ const projects = [
     slogan: '养生先养背，背通人轻松',
     icon: '背部',
     iconBg: 'linear-gradient(135deg, #2D6A5F, #5A9A8E)',
+    image: 'assets/能量空间C系.png',
     target: '肩背酸痛、腰肌劳损者；容易落枕、颈部不适者；胸闷腹胀、背部易生痤疮者；后颈部有富贵包倾向者；长期伏案、久坐办公者；希望进行背部放松养护者。',
     tech: '能量空间C系采用先进的环形脉冲电磁能量场内透热技术，通过独特的环形电场设计产生温和而有效的热能，能量能够深入人体腰背部组织内部，精准作用于肌肉、血管等部位，从内部逐渐渗透，促进腰背部血液循环的顺畅运行。与传统热疗方式相比，该技术具有更高的针对性与穿透性，能够在不损伤体表皮肤的前提下，深度缓解腰背部的酸痛感。',
     features: [
@@ -598,6 +617,7 @@ const projects = [
     slogan: '长寿秘诀，始于足下',
     icon: '足部',
     iconBg: 'linear-gradient(135deg, #8B5E3C, #C49A6C)',
+    image: 'assets/V型能量空间养生舱.png',
     target: '腿部水肿、下肢乏力者；手脚发凉、怕冷者；皮肤干燥、后跟开裂者；膝盖疼痛、关节不适者；腿部有静脉曲张倾向者；长期站立或行走者；希望进行足部温养、改善睡眠者。',
     tech: '采用环形能量场内透热技术，深层透热，有助于打通足部及下肢微循环。无需加水、无需脱鞋，直接使用即可感受温热。45cm加高深桶设计，给小腿乃至全身带来深深的暖意。',
     features: [
@@ -618,6 +638,7 @@ const projects = [
     slogan: '解压脊柱，轻松入眠',
     icon: '脊柱',
     iconBg: 'linear-gradient(135deg, #5B4B8A, #8B7BB8)',
+    image: 'assets/律动机器人.png',
     target: '颈椎痛、腰椎痛、肩背痛者；驼背、脊柱侧弯倾向者；疲劳感增加、睡眠质量差者；久坐人群（上班族、学生、司机）；高强度运动爱好者；体力劳动者；长期站立人群；有不良生活习惯者；中老年人、孕妇、肥胖人群。',
     tech: '律动机器人融合五行音乐、顶升牵引、石墨烯热疗、PGZ律动按摩、扭腰正骨等八项综合功能技术，对人体的脊柱、颈、肩、腰、腿、足等全身多部位进行综合作用，有助于温煦经络气血、活血化瘀止痛、放松脊柱压力、改善神经和助眠。设备按照脊柱养护逻辑设计六个步骤：激活脊柱 → 温补脊柱 → 疏通脊柱 → 放松脊柱 → 调理脊柱 → 稳固脊柱，循序渐进地呵护脊柱健康。',
     features: [
@@ -640,6 +661,7 @@ const projects = [
     slogan: '中下焦区域温养专家',
     icon: '盆腔',
     iconBg: 'linear-gradient(135deg, #A0522D, #D2956A)',
+    image: 'assets/护臀凳.png',
     target: '腰膝酸软者；尿频尿急、夜尿偏多者；前列腺不适者；盆底松弛者；宫寒畏冷、手脚冰凉者；妇科区域不适者；痔疮困扰者；长期久坐导致臀部不适者。',
     tech: '深度内透热能有效扩张血管，促进中下焦区域的血液流通，驱散体内寒湿，减少因寒湿引发的不适，如腹部胀痛、消化不良、腰腹疲劳等。同时，深度内透热有助于提高气血运行，加速新陈代谢，帮助身体更有效地排除代谢废物和毒素，改善中下焦的营养供应。',
     features: [
@@ -660,6 +682,7 @@ const projects = [
     slogan: '放松养生，健康娱乐',
     icon: '娱乐',
     iconBg: 'linear-gradient(135deg, #B8860B, #DAA520)',
+    image: 'assets/搜蛋凳.png',
     target: '腰膝酸软者；尿频尿急、夜尿偏多者；前列腺不适者；盆底松弛者；宫寒畏冷者；妇科区域不适者；痔疮困扰者；喜爱棋牌娱乐、希望在休闲同时进行养生者。',
     tech: '与护臀凳采用相同的深度内透热技术，有效扩张血管，促进中下焦区域的血液流通，驱散体内寒湿，减少因寒湿引发的不适。同时有助于提高气血运行，加速新陈代谢，帮助身体排除代谢废物和毒素。',
     features: [
@@ -731,6 +754,9 @@ projects.forEach((p, i) => {
     </div>
     <div class="project-body">
       <div class="project-content">
+        <div class="project-image">
+          <img src="${p.image}" alt="${p.fullName}">
+        </div>
         <div class="project-block">
           <div class="project-block-title">适合人群</div>
           <p>${p.target}</p>
